@@ -1,0 +1,20 @@
+#+TITLE:CTBLAS -- Compile-time BLAS
+
+* Summary 
+  A set of header files for compile-time linear algebra operations:
+  operations similar to those found in the reference
+  [[http://www.netlib.org/blas][Fortran BLAS implementation]].  The functionality is implemented in a
+  header library.
+
+* Status
+
+  CTBLAS is in the earliest stages of development.  The Level 1
+  routines are implemented, excluding the most of the Givens rotation
+  routines.  The Level 2 and Level 3 routines are not in place.
+
+* Dependencies 
+  - [[https://github.com/sabjohnso/Combine][Combine]]
+
+
+
+
