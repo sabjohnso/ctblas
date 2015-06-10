@@ -24,8 +24,15 @@ namespace ctblas
 
 
   
-  struct Rotg
+  struct RotG
   {
+
+    /** Index of output variables 
+     */
+    struct Index
+    {
+      enum { r, z, c, s };
+    };
       
     template< typename X >
     constexpr auto
@@ -43,7 +50,7 @@ namespace ctblas
     {
       return scale == 0
 	? make_tuple( X( 0 ), X( 0 ),  X( 1 ), X( 0 ))
-	: aux1( a, b, roe, scale, copysign( 1, scale*hypot( a/scale, b/scale )));
+	: aux1( a, b, roe, scale, copysign( scale*hypot( a/scale, b/scale ), roe ));
     }
 
     template< typename X >
@@ -67,7 +74,7 @@ namespace ctblas
     
   }; // end of struct Rotg
 
-  constexpr static auto rotg = Rotg{};
+  constexpr static auto rotg = RotG{};
   
   
 } // end of namespace ctblas
